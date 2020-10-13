@@ -27,9 +27,8 @@ const initialState = [
     id: 3,
     name: 'Papaya',
     price: 10,
-    issues: {
-      3: 25,
-    },
+    discount: 5,
+    discountRepeat: 3,
   },
 ];
 

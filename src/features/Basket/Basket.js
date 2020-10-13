@@ -46,7 +46,7 @@ function BasketProduct(props) {
 function Basket({ items, products, onRemoveProduct, onRemoveAllProducts }) {
   const renderProducts = () => {
     return items.map(({ id, count }) => {
-      const { name, price, issues } = products.find(
+      const { name, price, discount, discountRepeat } = products.find(
         (product) => product.id === id
       );
 
@@ -56,7 +56,7 @@ function Basket({ items, products, onRemoveProduct, onRemoveAllProducts }) {
           id={id}
           name={name}
           count={count}
-          price={calculatePrice(count, price, issues)}
+          price={calculatePrice(count, price, discount, discountRepeat)}
           onRemove={onRemoveProduct}
           onRemoveAll={onRemoveAllProducts}
         />

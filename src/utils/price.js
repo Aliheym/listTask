@@ -1,7 +1,9 @@
-export function calculatePrice(count, price, issues = {}) {
-  if (issues[count] !== undefined) {
-    return issues[count];
+export function calculatePrice(count, price, discount, discountRepeat) {
+  let totalPrice = price * count;
+
+  if (discountRepeat) {
+    totalPrice -= Math.floor(count / discountRepeat) * discount;
   }
 
-  return price * count;
+  return totalPrice;
 }
